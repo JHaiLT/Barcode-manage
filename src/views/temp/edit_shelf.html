@@ -1,0 +1,29 @@
+ 
+ <link rel="stylesheet" href="../../../start/layui/css/layui.css" media="all">
+
+	<form class="layui-form" style="margin:30px  0 0 80px;">
+		<div class="layui-form-item">
+				<input type="hidden" name="ID" id="ID" placeholder="" autocomplete="off"  class="layui-input layui-input-block ID">
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">名称:</label>
+				<input type="text" name="Name" id="Name" placeholder="" autocomplete="off" lay-verify="required" class="layui-input layui-input-block Name">
+		</div>
+		<div class="layui-form-item" >
+			<label class="layui-form-label">产品名称:</label>
+			<div class="layui-inline">
+		         <select  id='ProductionNameS'  name="ProductionNameS" lay-search="" lay-filter="userFilter">
+		                <option value="">-请产品名称-</option>
+		      </select> 
+		    </div>
+		</div>	
+		<div class="layui-form-item" style="margin:25px 0 0 80px;">
+				<button id="submited" class="layui-btn" lay-submit lay-filter="form_shelf" style="display: none" ></button>
+		</div>
+	</form>
+
+
+    <script src="../../../start/layui/layui.js"></script>
+	<script src="../../lib/jquery-1.9.1.js"></script>
+	<script src="../../lib/js/warehouse/edit_shelf.js"></script>
+	<script src="../../lib/bootstrap-treeview.js"></script>

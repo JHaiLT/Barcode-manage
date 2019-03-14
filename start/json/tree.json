@@ -1,0 +1,181 @@
+[
+  {
+    "id": "1",
+    "text": "系统管理",
+    "nodes":""
+  },
+  {
+    "id": "WMS01000",
+    "text": "物料管理",
+    "nodes": [
+      {
+        "id": "WMS01001",
+        "text": "基础信息",
+        "nodes": null
+      },
+      {
+        "id": "WMS01002",
+        "text": "分类信息",
+        "nodes": null
+      },
+      {
+        "id": "WMS01003",
+        "text": "附属信息",
+        "nodes": null
+      },
+      {
+        "id": "WMS01004",
+        "text": "仓库信息",
+        "nodes": null
+      }
+    ]
+  },
+  {
+    "id": "WMS02000",
+    "text": "单据管理",
+    "nodes": [
+      {
+        "id": "WMS02001",
+        "text": "生产单",
+        "nodes": null
+      },
+      {
+        "id": "WMS02002",
+        "text": "完工单",
+        "nodes": null
+      },
+      {
+        "id": "WMS02003",
+        "text": "送货单",
+        "nodes": null
+      },
+      {
+        "id": "WMS02004",
+        "text": "转仓单",
+        "nodes": null
+      },
+      {
+        "id": "WMS02005",
+        "text": "退货单",
+        "nodes": null
+      },
+      {
+        "id": "WMS02006",
+        "text": "完工入库单",
+        "nodes": null
+      }
+    ]
+  },
+  {
+    "id": "WMS03000",
+    "text": "客户管理",
+    "nodes": [
+      {
+        "id": "WMS03001",
+        "text": "客户信息",
+        "nodes": null
+      }
+    ]
+  },
+  {
+    "id": "WMS04000",
+    "text": "仓库管理",
+    "nodes": [
+      {
+        "id": "WMS04001",
+        "text": "货架管理",
+        "nodes": null
+      },
+      {
+        "id": "WMS04002",
+        "text": "库存数据",
+        "nodes": null
+      }
+    ]
+  },
+  {
+    "id": "WMS05000",
+    "text": "栈板管理",
+    "nodes": [
+      {
+        "id": "WMS05001",
+        "text": "栈板管理",
+        "nodes": null
+      },
+      {
+        "id": "WMS05002",
+        "text": "栈板信息",
+        "nodes": null
+      }
+    ]
+  },
+  {
+    "id": "WMS06000",
+    "text": "箱子管理",
+    "nodes": [
+      {
+        "id": "WMS06001",
+        "text": "类型管理",
+        "nodes": null
+      },
+      {
+        "id": "WMS06002",
+        "text": "箱子信息",
+        "nodes": null
+      },
+      {
+        "id": "WMS06003",
+        "text": "历史信息",
+        "nodes": null
+      }
+    ]
+  },
+  {
+    "id": "WMS07000",
+    "text": "打印管理",
+    "nodes": [
+      {
+        "id": "WMS07001",
+        "text": "打印记录",
+        "nodes": null
+      }
+    ]
+  },
+  {
+    "id": "WMS08000",
+    "text": "异常管理",
+    "nodes": [
+      {
+        "id": "WMS08001",
+        "text": "异常记录",
+        "nodes": null
+      }
+    ]
+  },
+  {
+    "id": "WMS00000",
+    "text": "系统管理",
+    "nodes": [
+      {
+        "id": "WMS00001",
+        "text": "账号管理",
+        "nodes": null
+      },
+      {
+        "id": "WMS00002",
+        "text": "角色管理",
+        "nodes": null
+      },
+      {
+        "id": "WMS00003",
+        "text": "使用帮助",
+        "nodes": null
+      },
+      {
+        "id": "WMS00004",
+        "text": "修改密码",
+        "nodes": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+<title>箱子历史信息</title>
+<div class="demoTable" style="margin:5px;">
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="Box_history_Barcode" id="Box_history_Barcode" placeholder="请输入箱号" autocomplete="off"> 
+        </div>
+      </div>
+	      <div class="layui-col-md2">
+	        <div class="layui-inline">
+	          <div class="layui-input-inline">
+	            <input type="text" name="BoxH_date" id="BoxH_date" placeholder="开始时间" autocomplete="off" class="layui-input">
+	          </div>
+	        </div>
+	      </div>
+	     <div class="layui-col-md2">
+	      <div class="layui-inline">
+	        <div class="layui-input-inline">
+	          <input type="text" name="BoxH_date1" id="BoxH_date1" placeholder="结束时间" autocomplete="off" class="layui-input">
+	        </div>
+	      </div>
+	    </div>      
+    <div class="layui-col-md1">
+      <button class="layui-btn" id="Box_history_query">查找</button>
+    </div>
+    <div class="layui-col-md3">
+    </div>
+  </div>
+   <table class="layui-hide" id="LAY_table_Boxmessage" lay-filter="user"></table> 
+		<div class="admin-table-page" style="margin-bottom: 50px;">
+				<div id="BoxHistorypaged" class="BoxHistorypaged""></div>
+		</div>
+ </div>
+
+
+<script type="text/html" id="OperationType_Box">
+	{{#  if(d.operationtype==1){ }}
+    <span style="color: #F581B1;">创建</span>
+  {{#  } else if(d.operationtype==2){ }}
+     <span style="color: #B92C28;">绑定</span>
+  {{#  } else if(d.operationtype==3){ }}
+     <span style="color: #009688;">入库</span> 
+  {{#  } else if(d.operationtype==4){ }}
+     <span style="color: #009688;">出库</span> 
+  {{#  } else if(d.operationtype==5){ }}
+     <span style="color: #009688;">移出</span> 
+  {{#  } else if(d.operationtype==6){ }}
+     <span style="color: #009688;">移入</span>  
+  {{#  } else if(d.operationtype==7){ }}
+     <span style="color: #009688;">拆箱</span>    
+  {{#  } }}
+	
+</script>
+
+<!-------------js-------------->
+
+
+<script src="../src/lib/js/box/bo_history.js"></script>
+<script src="../src/lib/bootstrap-treeview.js"></script>

@@ -1,0 +1,30 @@
+ 
+ <link rel="stylesheet" href="../../../start/layui/css/layui.css" media="all">
+
+	<form class="layui-form" style="margin:30px  0 0 80px;">
+		<div class="layui-form-item">
+		<label class="layui-form-label">用户ID:</label>
+				<input type="text" name="UserId" id="UserId" placeholder="" autocomplete="off" lay-verify="required" class="layui-input layui-input-block UserId">
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">用户编号:</label>
+				<input type="text" name="EnCode" id="EnCode" placeholder="" autocomplete="off" lay-verify="required" class="layui-input layui-input-block EnCode">
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">用户名:</label>
+				<input type="text" name="RealName" id="RealName" placeholder="" autocomplete="off" lay-verify="required" class="layui-input layui-input-block RealName">
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">备注:</label>
+				<input type="text" name="Description" id="Description" placeholder="" autocomplete="off"  class="layui-input layui-input-block Description">
+		</div>			
+		<div class="layui-form-item" style="margin:25px 0 0 80px;">
+				<button id="submited" class="layui-btn" lay-submit lay-filter="form_role" style="display: none" ></button>
+		</div>
+	</form>
+
+
+    <script src="../../../start/layui/layui.js"></script>
+	<script src="../../lib/jquery-1.9.1.js"></script>
+	<script src="../../lib/md5.js"></script>
+	<script src="../../lib/js/system/edit_user.js"></script>

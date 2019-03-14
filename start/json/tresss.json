@@ -1,0 +1,173 @@
+{
+	"type": 1,
+	"errorcode": 0,
+	"message": "success!",
+	"resultdata": {
+		"PositionTree": {
+			"text":"成品库",
+			"ID": "ID",
+			"Name": "成品库",
+			"FatherID": null,
+			"Barcode": null,
+			"ProductionID": null,
+			"Number": null,
+			"tags":"条码：A00-000,产品：零件3",
+			"nodes": [
+				  {
+					"text":"A区",
+					"ID": "IDA",
+					"Name": "A区",
+					"FatherID": "ID",
+					"Barcode": "A00-000",
+					"ProductionID": null,
+					"Number": "A",
+					"Remark": null,
+					"nodes": [
+						{
+							"text":"A01货架",
+							"ID": "IDA01",
+							"Name": "A01货架",
+							"FatherID": "IDA",
+							"Barcode": "A01-000",
+							"ProductionID": null,
+							"Number": "01",
+							"Remark": null,
+							"nodes": [
+								{
+									"text":"1层",
+									"ID": "IDA011",
+									"Name": "1层",
+									"FatherID": "IDA01",
+									"Barcode": "A01-100",
+									"ProductionID": null,
+									"Number": "1",
+									"Remark": null,
+									"nodes": [
+										{
+											"text":"01位",
+											"ID": "IDA01101",
+											"Name": "01位",
+											"FatherID": "IDA011",
+											"Barcode": "A01-101",
+											"ProductionID": null,
+											"Number": "01",
+											"Remark": null,
+											"Children": null
+										}, {
+											"text":"02位",
+											"ID": "IDA01102",
+											"Name": "02位",
+											"FatherID": "IDA011",
+											"Barcode": "A01-102",
+											"ProductionID": null,
+											"Number": "01",
+											"Remark": null,
+											"Children": null
+										}
+									]
+								}, {
+									"text":"2层",
+									"ID": "IDA012",
+									"Name": "2层",
+									"FatherID": "IDA01",
+									"Barcode": "A01-200",
+									"ProductionID": null,
+									"Number": "2",
+									"Remark": null,
+									"nodes": [
+										{
+											"text":"01位",
+											"ID": "IDA01201",
+											"Name": "01位",
+											"FatherID": "IDA012",
+											"Barcode": "A01-201",
+											"ProductionID": null,
+											"Number": "02",
+											"Remark": null,
+											"Children": null
+										}
+									]
+								}, {
+									"text":"3层",
+									"ID": "IDA013",
+									"Name": "3层",
+									"FatherID": "IDA01",
+									"Barcode": "A01-100",
+									"ProductionID": null,
+									"Number": "2",
+									"Remark": null,
+									"Children": null
+								}
+							]
+						}, {
+							"text":"A02货架",
+							"ID": "IDA02",
+							"Name": "A02货架",
+							"FatherID": "IDA",
+							"Barcode": "A02-000",
+							"ProductionID": null,
+							"Number": "02",
+							"Remark": null,
+							"nodes": [
+								{
+									"text":"1层",
+									"ID": "IDA021",
+									"Name": "1层",
+									"FatherID": "IDA02",
+									"Barcode": "A02-100",
+									"ProductionID": null,
+									"Number": "1",
+									"Remark": null,
+									"nodes": [
+										{
+											"text":"1位",
+											"ID": "IDA02101",
+											"Name": "1位",
+											"FatherID": "IDA021",
+											"Barcode": "A02-101",
+											"ProductionID": null,
+											"Number": "01",
+											"Remark": null,
+											"Children": null
+										}
+									]
+								}
+							]
+						}, {
+							"text":"A03货架",
+							"ID": "IDA03",
+							"Name": "A03货架",
+							"FatherID": "IDA",
+							"Barcode": "A03-000",
+							"ProductionID": null,
+							"Number": "03",
+							"Remark": null,
+							"Children": null
+						}
+					]
+				}, {
+					"text":"B区",
+					"ID": "IDB",
+					"Name": "B区",
+					"FatherID": "ID",
+					"Barcode": "B00-000",
+					"ProductionID": null,
+					"Number": "B",
+					"Remark": null,
+					"Children": null
+				}, {
+					"text":"C区",
+					"ID": "IDC",
+					"Name": "C区",
+					"FatherID": "ID",
+					"Barcode": "C00-000",
+					"ProductionID": null,
+					"Number": "C",
+					"Remark": null,
+					"Children": null
+				}
+			]
+		},
+		"costtime": "81"
+	}
+}

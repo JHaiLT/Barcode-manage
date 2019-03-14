@@ -1,0 +1,265 @@
+<div style="">
+<div style="width:80%; margin: auto;margin-top: 40px;margin-bottom: 40px;background-color: #ffffff;">
+	<p style="font-size: 20px;text-align: center;font-weight: 800;">库存信息</p>
+<table class="layui-hide" id="LAY_table_StateDayHome" lay-filter="user"></table> 
+<div class="admin-table-page">
+		<div id="StateDaypaged" class="StateDaypage"></div>
+</div>
+</div>
+<div id="traceProvinceOrder" style="width:80%;height:480px; margin: auto;margin-bottom: 90px;background-color: #ffffff;"></div>
+<div id="main1" style="width:80%;height:480px;margin: auto;margin-bottom: 60px;margin-top: 60px;background-color: #ffffff;"></div>
+</div>
+<script src="../src/lib/js/statement/day_home.js"></script>
+   <script type="text/javascript">
+	var myChart = echarts.init(document.getElementById('traceProvinceOrder'));
+    // 显示标题，图例和空的坐标轴
+    myChart.setOption({
+        title: {
+            text: '仓库'
+        },
+        color: ['#3398DB'],
+        legend: {
+            data: ['数量']
+        },
+        xAxis: {
+            data: []
+        },
+        yAxis: {
+            splitLine: { show: false },//去除网格线
+            name: ''
+        },
+        series: [{
+            barWidth: "30px",
+            name: '数量',
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: true,
+                        position: 'top',
+                        textStyle: {
+                            color: '#333'
+                        }
+                    }
+                }
+            },
+            data: []
+        }]
+    });
+
+    myChart.showLoading();    //数据加载完之前先显示一段简单的loading动画
+    var names = [];    //类别数组（实际用来盛放X轴坐标值）
+    var nums = [];    //销量数组（实际用来盛放Y坐标值）
+    var Qdata=JSON.stringify({MaxCount:5}).replace(/\"/g,"'");
+    $.ajax({
+        type: 'post',
+        url:layui.setter.Test_url+'/WMSManage/wms_stock/GetStock',//请求数据的地址
+        dataType: "json", //返回数据形式为json
+	    data: JSON.stringify({
+	   		queryJson:Qdata
+	   		}),
+    	dataType: "json",
+    	contentType:"application/json",      
+        beforeSend: function(request) {
+		 	request.setRequestHeader("token",localStorage.getItem("token"));
+		   },
+        success: function (result) {
+            if(result.type == 4) {    
+        	   	layer.msg(result.message, {
+					offset: '45px',
+					icon: 5,
+					 time: 2000
+					});
+			location.hash = '/user/login'
+						} else {
+            //请求成功时执行该函数内容，result即为服务器返回的json对象
+            $.each(result.resultdata.rows, function (index, item) {
+                names.push(item.productionname);    //挨个取出类别并填入类别数组                    
+                nums.push(item.acount);    //挨个取出销量并填入销量数组
+            });
+            myChart.hideLoading();    //隐藏加载动画
+            myChart.setOption({        //加载数据图表
+            	  title: {
+            text: '仓库'
+        },
+        color: ['#3398DB'],
+        legend: {
+            data: ['数量']
+        },
+        xAxis: {
+            data: names,
+            name: '产品名称',
+			axisLabel : {
+				interval:0,
+                rotate:"15"				
+				//坐标轴刻度标签的相关设置。
+// formatter : function(params){
+//                 var newParamsName = "";// 最终拼接成的字符串
+//                          var paramsNameNumber = params.length;// 实际标签的个数
+//                          var provideNumber = 4;// 每行能显示的字的个数
+//                          var rowNumber = Math.ceil(paramsNameNumber / provideNumber);// 换行的话，需要显示几行，向上取整
+//                          /**
+//                           * 判断标签的个数是否大于规定的个数， 如果大于，则进行换行处理 如果不大于，即等于或小于，就返回原标签
+//                           */
+//                          // 条件等同于rowNumber>1
+//                          if (paramsNameNumber > provideNumber) {
+//                              /** 循环每一行,p表示行 */
+//                              for (var p = 0; p < rowNumber; p++) {
+//                                  var tempStr = "";// 表示每一次截取的字符串
+//                                  var start = p * provideNumber;// 开始截取的位置
+//                                  var end = start + provideNumber;// 结束截取的位置
+//                                  // 此处特殊处理最后一行的索引值
+//                                  if (p == rowNumber - 1) {
+//                                      // 最后一次不换行
+//                                      tempStr = params.substring(start, paramsNameNumber);
+//                                  } else {
+//                                      // 每一次拼接字符串并换行
+//                                      tempStr = params.substring(start, end) + "\n";
+//                                  }
+//                                  newParamsName += tempStr;// 最终拼成的字符串
+//                              }
+//
+//                          } else {
+//                              // 将旧标签的值赋给新标签
+//                              newParamsName = params;
+//                          }
+//                          //将最终的字符串返回
+//                          return newParamsName
+//              }
+
+			   }            
+        },
+        yAxis: {
+            splitLine: { show: false },//去除网格线
+            name: ''
+        },
+        series: [{
+            barWidth: "30px",
+            name: '数量',
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: true,
+                        position: 'top',
+                        textStyle: {
+                            color: '#333'
+                        }
+                    }
+                }
+            },
+            data: nums
+        }]
+            });							
+			}
+        },
+        error: function (errorMsg) {
+            //请求失败时执行该函数
+            alert("图表请求数据失败!");
+            myChart.hideLoading();
+        }
+    });
+    </script>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('main1'));
+        // 指定图表的配置项和数据
+        option = {
+		    title: {
+		        text: '货架',
+		    },
+		    tooltip: {
+		        trigger: 'axis',
+		        axisPointer: {
+		            type: 'shadow'
+		        }
+		    },
+		    legend: {
+		        data: ['未使用库位数量', '已使用库位数量']
+		    },
+		    xAxis: {
+		        type: 'value',
+		        boundaryGap: [0, 0.01],        
+		    },
+		    yAxis: {
+		        type: 'category',
+		        data: one
+		    },
+		    series: [
+		        {
+		            name: '未使用库位数量',
+		            type: 'bar',
+		            data: two
+		        },
+		        {
+		            name: '库存',
+		            type: '已使用库位数量',
+		            data: three
+		        }
+		    ]
+		};				
+        myChart1.showLoading();    //数据加载完之前先显示一段简单的loading动画
+		    var one = [];    //类别数组（实际用来盛放X轴坐标值）
+		    var two = [];    //销量数组（实际用来盛放Y坐标值）
+		    var three = []; 
+		    $.ajax({
+			        type: 'post',
+			        url:layui.setter.Test_url+'/WMSManage/wms_stock/GetPositionUseDetail',//请求数据的地址
+			        dataType: "json", //返回数据形式为json
+				    data: JSON.stringify({
+						WarehouseID:"008-成品",
+					    PositionTypeID:2
+				   		}),
+			    	dataType: "json",
+			    	contentType:"application/json",      
+			        beforeSend: function(request) {
+					 	request.setRequestHeader("token",localStorage.getItem("token"));
+					   },
+		        success: function (result) {
+		            //请求成功时执行该函数内容，result即为服务器返回的json对象
+		            $.each(result.resultdata.rows, function (index, item) {
+		                one.push(item.Name);    //挨个取出类别并填入类别数组                    
+		                two.push(item.NoUseAcount);    //挨个取出销量并填入销量数组
+		                three.push(item.UseAcount);
+		            });
+		            myChart1.hideLoading();    //隐藏加载动画
+		            myChart1.setOption({//加载数据图表
+		            	 title: {
+					        text: '货架',
+					    },
+					    tooltip: {
+					        trigger: 'axis',
+					        axisPointer: {
+					            type: 'shadow'
+					        }
+					    },
+					    legend: {
+					        data: ['未使用库位数量', '已使用库位数量']
+					    },
+		            	 xAxis: {
+					        type: 'value',
+					        name: '库位',
+					        boundaryGap: [0, 0.01],        
+					    },
+		                yAxis: {
+		                    data: one
+		                },
+		                series: [{
+		                	name: '未使用库位数量',
+		                	type: 'bar',
+				            data: two
+				        },
+				        {
+				        	name: '已使用库位数量',
+				        	type: 'bar',
+				            data: three
+				        }]
+		            });
+		        },
+		        error: function (errorMsg) {
+		            //请求失败时执行该函数
+		            alert("图表请求数据失败!");
+		            myChart.hideLoading();
+		        }
+		    });
+    </script>

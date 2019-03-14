@@ -1,0 +1,32 @@
+<title>库存数据</title>
+<div class="demoTable" style="margin: 5px;">
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="PositionBarcode" id="PositionBarcode" placeholder="请输入库位条码" autocomplete="off"> 
+        </div>
+      </div>
+       <div class="layui-col-md2">
+        <div class="layui-inline layui-form">
+           <select class="layui-input-block" id='boards_data' name="boards_data" lay-search="" lay-verify="required"  lay-filter="boardFilter">
+                	<option value="">-请产品名称-</option>
+           </select> 
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <button class="layui-btn" id="data_query">搜索</button>
+      </div>
+      <div class="layui-col-md6">
+    </div>
+  </div>
+ </div>
+ <table class="layui-hide" id="LAY_table_data" lay-filter="user"></table> 
+<div class="admin-table-page" style="margin-bottom: 50px;">
+		<div id="WareDatapaged" class="WareDatapaged"></div>
+</div>
+</div>
+
+
+<!-------------js-------------->
+<script src="../src/lib/js/warehouse/data.js"></script>

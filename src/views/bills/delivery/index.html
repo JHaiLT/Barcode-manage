@@ -1,0 +1,49 @@
+<div style="margin: 5px;">
+<title>送货单</title>
+<div class="demoTable">
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="shipmentNumber" id="shipmentNumber" placeholder="请输入送货单" autocomplete="off"> 
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="layui-inline layui-form">
+            <select class="layui-input-block" name="delivery_Select" id="delivery_Select" lay-search="" lay-filter="aihao">
+              <option value="">请选择产品</option>
+            </select>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <div class="layui-input-inline">
+            <input type="text" name="de_date" id="de_date" placeholder="开始时间" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+      </div>
+     <div class="layui-col-md2">
+      <div class="layui-inline">
+        <div class="layui-input-inline">
+          <input type="text" name="de_date1" id="de_date1"  placeholder="结束时间" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md2">
+      <button class="layui-btn" id="delivery_Serch">搜索</button>
+    </div>
+    <div class="layui-col-md2">
+    </div>
+  </div>
+ </div>
+</div>
+<table class="layui-hide" id="LAY_table_delivery" lay-filter="user"></table> 
+<div class="admin-table-page" style="margin-bottom: 50px;">
+		<div id="Deliverypaged" class="Deliverypaged"></div>
+</div>
+</div>
+<script type="text/html" id="box_type">
+  <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="edit">手工同步</a>
+</script>
+<!-------------js-------------->
+<script src="../src/lib/js/bills/delivery.js"></script>

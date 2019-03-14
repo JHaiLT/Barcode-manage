@@ -1,0 +1,24 @@
+{
+    "list":[
+        {
+            "product":"产品A",
+            "num":480
+        },
+        {
+            "product":"产品B",
+            "num":380
+        },
+        {
+            "product":"产品C",
+            "num":366
+        },
+		{
+            "product":"产品D",
+            "num":320
+        },
+		{
+            "product":"产品E",
+            "num":300
+        }
+    ]
+}

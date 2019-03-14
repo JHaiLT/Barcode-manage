@@ -1,0 +1,45 @@
+<title>移库单</title>
+<div class="demoTable" style="margin: 5px;">
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="TransferOrderNo" id="TransferOrderNo" placeholder="请输入转仓单号" autocomplete="off"> 
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="layui-inline layui-form">
+            <select class="layui-input-block" name="switch_Select" id="switch_Select" lay-search="" lay-filter="aihao">
+              <option value="">请选择产品</option>
+            </select>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <div class="layui-input-inline">
+            <input type="text" name="sw_date" id="sw_date" lay-verify="sw_date" placeholder="开始时间" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+      </div>
+     <div class="layui-col-md2">
+      <div class="layui-inline">
+        <div class="layui-input-inline">
+          <input type="text" name="sw_date1" id="sw_date1" lay-verify="sw_date1" placeholder="结束时间" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md2">
+      <button class="layui-btn" id="switch_Serch">搜索</button>
+    </div>
+    <div class="layui-col-md2">
+    </div>
+  </div>
+ </div>
+ <table class="layui-hide" id="LAY_table_switch" lay-filter="user"></table> 
+<div class="admin-table-page" style="margin-bottom: 50px;">
+		<div id="switchpaged" class="switchpaged"></div>
+</div>
+</div>
+
+<!-------------js-------------->
+<script src="../src/lib/js/bills/switch.js"></script>

@@ -1,0 +1,82 @@
+
+<title>使用帮助</title>
+  <div style="text-align: center;">
+    <h2 style="margin-top: 60px;font-size: 30px;margin-bottom: 20px;">系统简介</h2>
+    <p style="">该系统由三个方面组成：PC端，平板（iPad端），及web后台管理端</p>
+    <button class="layui-btn-radius layui-btn" id="add_Box" style="margin: 10px;" >永发条码管理系统使用说明下载</button> 
+</div>
+
+<style>
+/* 这段样式只是用于演示 */
+#LAY-component-grid-stack .layui-card-body{
+	 display: flex; 
+	 justify-content: center;
+	 flex-direction: column; 
+	 text-align: center; 
+	 height: 400px;
+	 }
+.layui-card-body img{
+	height: 100%;
+	width:  100%;
+	margin: auto;
+}	 
+</style>
+
+<div class="layui-fluid" id="LAY-component-grid-stack">
+  <div class="layui-row layui-col-space10">
+    		<div class="layui-col-md3 layui-col-sm2"></div>
+	    		<div class="layui-col-md6 layui-col-sm8" >
+				      <div class="layui-card">
+				        <div class="layui-card-header">
+				        	<p>PC端主要涉及标签的打印状态，箱子、栈板的添加</p>
+				        </div>
+				        <div class="layui-card-body">
+				        	<img src="../start/layui/images/12.png"/>
+				        </div>
+				      </div>	    			
+	    		</div>    		
+    		<div class="layui-col-md3 layui-col-sm2"></div>    		
+  </div>
+  <div class="layui-row layui-col-space10">
+    		<div class="layui-col-md3 layui-col-sm2"></div>
+	    		<div class="layui-col-md6 layui-col-sm8">
+			      <div class="layui-card">
+			        <div class="layui-card-header">
+			        	<p>Web后台端主要涉及条码信息的管理，箱子类型的添加以及货架的添加</p>
+			        </div>
+			        <div class="layui-card-body">
+			        	<img src="../start/layui/images/13.png"/>
+			        </div>
+			      </div>    			
+	    		</div>    		
+    		<div class="layui-col-md3 layui-col-sm2"></div>    		
+  </div>  
+  <div class="layui-row layui-col-space10" style="margin-bottom: 60px;">
+    		<div class="layui-col-md3 layui-col-sm2"></div>
+	    		<div class="layui-col-md6 layui-col-sm8">
+			      <div class="layui-card">
+			        <div class="layui-card-header">
+			        	<p>平板端主要进行业务的操作，建箱、拆箱、移箱、建栈、移栈、入库、备货、移库等操作</p>
+			        </div>
+			        <div class="layui-card-body">
+			        	<img src="../start/layui/images/14.jpg"/>
+			        </div>
+			      </div>   			
+	    		</div>    		
+    		<div class="layui-col-md3 layui-col-sm2"></div>    		
+  </div>   
+</div>
+<script>
+layui.use(['admin'], function(){
+  var $ = layui.$
+  ,admin = layui.admin
+  ,table = layui.table
+  ,element = layui.element; 
+  element.render('breadcrumb', 'breadcrumb');
+  
+  $("#add_Box").click(function(){
+		 window.location.href =layui.setter.Test_url+"/Documents/永发条码管理系统使用说明.pdf";  
+ });
+   
+});
+</script>

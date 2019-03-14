@@ -1,0 +1,65 @@
+<title>角色管理</title>
+<div class="demoTable" style="margin-bottom: 60px;">
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+    	<div calss="layui-col-md2">
+    		<div class="layui-inline layui-form">
+           <select class="layui-input-block" id='boards_data' name="boards_data"  lay-filter="aihao">
+                	<option value="1">-查询条件-</option>
+                	<option value="EnCode">角色编号</option>
+                	<option value="FullName">角色名称</option>
+           </select> 
+        </div>
+    	</div>    	
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="role_type" id="role_type" placeholder="输入信息" autocomplete="off"> 
+        </div>
+      </div>
+    <div class="layui-col-md1">
+      <button class="layui-btn" id="role_query">查找</button>
+    </div>
+    <div class="layui-col-md2"></div>
+    <div class="layui-col-md4">
+			    <div class="layui-btn-group ">
+					  <button class="layui-btn layui-btn-normal add-btn" data-type="getCheckData">增加</button>
+					  <button class="layui-btn layui-btn-warm edit-btn" data-type="getCheckData">编辑</button>
+					  <button class="layui-btn layui-btn-danger remove-btn" data-type="getCheckData">删除</button>
+					</div>
+    </div>
+    <div class="layui-col-md1">
+    	<button class="layui-btn btn-impower" id="">设置菜单</button>
+    </div>
+  </div>
+ </div>
+ <table class="layui-hide" id="LAY_table_role" lay-filter="user"></table>
+		<div class="admin-table-page">
+				<div id="role_paged" class="role_paged"></div>
+		</div>
+</div>
+
+	<script type="text/html" id="EnabledMark1Demo">
+	{{#
+		if(d.EnabledMark==0){
+			return "无效"
+		}else if(d.EnabledMark==1){
+			return "有效"
+		}
+	}}
+			
+</script>
+
+	<script type="text/html" id="ClientTypeDemo">
+	{{#
+		if(d.ClientType==1){
+			return "WEB端"
+		}else if(d.ClientType==2){
+			return "Ipad端"
+		}else if(d.ClientType==3){
+			return "PC端"
+		}
+	}}
+			
+</script>
+<!-------------js-------------->
+<script src="../src/lib/js/system/role.js"></script>

@@ -1,0 +1,43 @@
+ 
+ <link rel="stylesheet" href="../../../start/layui/css/layui.css" media="all">
+ <div class="layui-fluid">
+    <div class="layui-row">
+    	<div class="layui-col-md2 layui-col-xs2 layui-col-sm2"></div>
+	      <div class="layui-col-md8 layui-col-xs8 layui-col-sm8" style="margin-left: 80px;margin-top: 20px;">
+				<form class="layui-form" lay-filter="myform" >
+					<div class="layui-form-item">
+						<input type="hidden" name="ID" id="ID" autocomplete="off" class="layui-input layui-input-block ID">
+					</div>	
+					<div class="layui-form-item">
+						<label class="layui-form-label">工号:</label>
+							<input type="text" name="Code"  id="Code" lay-verify="required" autocomplete="off" class="layui-input layui-input-block Code" readonly="readonly" style="background-color: #F1F6F8;">
+					</div>					
+					<div class="layui-form-item">
+						<label class="layui-form-label">检验员名:</label>
+							<input type="text" name="checkerName"  id="checkerName" lay-verify="required" autocomplete="off" class="layui-input layui-input-block checkerName" readonly="readonly"style="background-color: #F1F6F8;">
+					</div>
+					<div class="layui-form-item" >
+							<label class="layui-form-label">班别:</label>
+							<div class="layui-inline ">
+					           <select  id='IsDay'  name="IsDay" lay-filter="userFilter" calss="departmentId IsDay">
+					                <option value="A">A班</option>
+					                <option value="B">B班</option>
+					           </select> 
+					        </div>
+					</div>					
+					<div class="layui-form-item">
+						<label class="layui-form-label">备注:</label>
+							<input type="text" name="Remark" id="Remark" autocomplete="off" class="layui-input layui-input-block Remark">
+					</div>
+					<div class="layui-form-item" style="margin:25px 0 0 80px;">
+							<button id="Editsubmited" class="layui-btn" lay-submit lay-filter="form_box_type" style="display: none" ></button>
+					</div>
+				</form>
+	  		</div>
+  		<div class="layui-col-md2 layui-col-xs2 layui-col-sm2"></div>
+ 	</div>
+</div>
+
+    <script src="../../../start/layui/layui.js"></script>
+	<script src="../../lib/jquery-1.9.1.js"></script>
+	<script src="../../lib/js/system/edit_checker.js"></script>

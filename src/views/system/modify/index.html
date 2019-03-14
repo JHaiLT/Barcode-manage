@@ -1,0 +1,81 @@
+<title>修改密码</title>
+<script type="text/html" template>
+  <link rel="stylesheet" href="{{ layui.setter.base }}style/set.css?v={{ layui.admin.v }}-1" media="all">
+</script>
+<div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login" style="display: none;">
+  <div class="layadmin-user-login-main">
+    <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+     <div class="layui-form-item">
+        <label class="layadmin-user-login-icon layui-icon layui-icon-password"></label>
+        <input type="password" name="passwordO" id="passwordO" placeholder="旧密码" class="layui-input">
+      </div>
+      <div class="layui-form-item">
+        <label class="layadmin-user-login-icon layui-icon layui-icon-password "></label>
+        <input type="password" name="password" id="password" placeholder="新密码" class="layui-input">
+      </div>
+      <div class="layui-form-item">
+        <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-nickname"></label>
+        <input type="password" name="passwordT" id="passwordT" placeholder="确认密码" class="layui-input">
+      </div>
+      <div class="layui-form-item">
+        <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-reg-submit">修改</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+layui.use([ 'admin','form', 'user'], function(){
+  var $ = layui.$
+  ,setter = layui.setter
+  ,admin = layui.admin
+  ,form = layui.form
+  ,router = layui.router();
+  form.render();
+
+  //提交
+  form.on('submit(LAY-user-reg-submit)', function(obj){
+    var field = obj.field;
+    if(field.password!=field.passwordT){
+    	layer.msg('输入密码不一致！', {
+					offset: '45px',
+					 icon: 5,
+				   time: 2000
+			});	
+    }else{
+    	$.ajax({
+		  		type: "post",
+					async: false,
+					data: {
+            password:hex_md5(obj.field.password),
+            oldPassword:hex_md5(obj.field.passwordO),
+						token:localStorage.getItem("token")
+					},
+					dataType: "json",
+					url: layui.setter.Test_url+"/TokenValid/SubmitResetPassword",
+					success: function(data, status) {	
+						console.log(data)
+						if(data.type==3){
+							layer.msg(data.message, {
+												offset: '45px',
+												 icon: 5,
+											   time: 2000
+										});							
+						}else{
+						layer.msg('请重新登录！', {
+											offset: '45px',
+											 icon: 3,
+										   time: 2000
+									}, function(){
+          location.hash = '/user/login'	
+        });								
+						}					   											
+					   }
+				 });    	
+    }
+    //请求接口
+
+
+  });
+});
+</script>

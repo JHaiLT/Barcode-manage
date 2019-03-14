@@ -1,0 +1,23 @@
+<title>附属信息</title>
+<div style="margin: 20px;">
+	<table class="layui-hide" id="Mater_auxiliary" lay-filter="user"></table>
+	 <div class="admin-table-page" style="margin-bottom: 50px;">
+	<div id="Mater_auxiliary_paged" class="Mater_auxiliary_paged"></div>
+	</div>
+</div>
+<!-------------js-------------->
+<script>
+layui.use(['admin', 'form', 'user','common','table'], function(){
+  var $ = layui.$
+  ,setter = layui.setter
+  ,admin = layui.admin
+  ,form = layui.form
+  ,table=layui.table
+  ,common = layui.common;
+//加载表格
+  common.loadTable();
+				 
+});	
+</script>
+
+

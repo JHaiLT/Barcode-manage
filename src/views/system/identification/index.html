@@ -1,0 +1,60 @@
+<title>账号管理</title>
+<div class="demoTable" style="margin-bottom: 60px;">
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+    	<div calss="layui-col-md2">
+    		<div class="layui-inline layui-form">
+           <select class="layui-input-block" id='user_boards_data' name="user_boards_data"   lay-filter="boardFilter">
+                	<option value="1">-查询条件-</option>
+                	<option value="Account">账户</option>
+                	<option value="RealName">姓名</option>
+           </select> 
+        </div>
+    	</div>    	
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="user_type" id="user_type" placeholder="输入信息" autocomplete="off"> 
+        </div>
+      </div>
+    <div class="layui-col-md1">
+      <button class="layui-btn" id="user_query">查找</button>
+    </div>
+    <div class="layui-col-md2"></div>
+    <div class="layui-col-md4">
+			    <div class="layui-btn-group ">
+					  <button class="layui-btn layui-btn-normal add-btn" data-type="getCheckData">增加</button>
+					  <button class="layui-btn layui-btn-warm edit-btn" data-type="getCheckData">编辑</button>
+					  <button class="layui-btn layui-btn-danger remove-btn" data-type="getCheckData">删除</button>
+					</div>
+    </div>
+    <div class="layui-col-md3">
+    	<div class="layui-btn-group ">
+    	<button class="layui-btn  return-btn">初始化密码</button>
+    	<button class="layui-btn layui-btn-danger add-role">设置角色</button>
+    	</div>
+    </div>
+  </div>
+ </div>
+ <table class="layui-hide" id="LAY_table_user" lay-filter="user"></table>
+		<div class="admin-table-page">
+				<div id="user_paged" class="user_paged"></div>
+		</div>
+</div>
+<script type="text/html" id="userbarDemo">
+ <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">禁用</a>
+ <a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="do">启用</a> 
+</script>
+
+		
+	<script type="text/html" id="EnabledMarkDemo">
+	{{#
+		if(d.EnabledMark==0){
+			return "禁用"
+		}else if(d.EnabledMark==1){
+			return "启用"
+		}
+	}}
+			
+</script>	
+<!-------------js-------------->
+<script src="../src/lib/js/system/identification.js"></script>

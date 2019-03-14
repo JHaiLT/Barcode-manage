@@ -1,0 +1,75 @@
+<title>完工入库单</title>
+<div class="demoTable" style="margin: 5px;">
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="completionwarehouseno" id="completionwarehouseno" placeholder="请输入完工入库单号" autocomplete="off" > 
+        </div>
+      </div>
+     <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="workplanno" id="workplanno" placeholder="请输入生产单号" autocomplete="off" > 
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="layui-inline layui-form">
+            <select class="layui-input-block" id="storage_bord" name="storage_bord" lay-search="" lay-filter="aihao">
+              <option value="">请选择产品</option>
+            </select>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="layui-inline layui-form">           
+            <select class="layui-input-block" id="ToERPStatus" name="ToERPStatus" lay-search="" lay-filter="aihao">
+              <option value="">同步状态</option>
+              <option value="0">待同步</option>
+              <option value="1">同步成功</option>
+              <option value="2">同步失败</option>
+            </select>
+        </div>
+      </div>      
+      <div class="layui-col-md1">
+        <div class="layui-inline">
+          <div class="layui-input-inline">
+            <input type="text" name="st_date" id="st_date" lay-verify="st_date" placeholder="开始时间" autocomplete="off" class="layui-input" style="width: 90px;">
+          </div>
+        </div>
+      </div>
+     <div class="layui-col-md1">
+      <div class="layui-inline">
+        <div class="layui-input-inline">
+          <input type="text" name="st_date1" id="st_date1" lay-verify="st_date1" placeholder="结束时间" autocomplete="off" class="layui-input" style="width: 90px;">
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md1">
+      <button class="layui-btn" id="bills_storage_query">搜索</button>
+    </div>
+    <div class="layui-col-md1">
+    </div>
+  </div>
+ </div>
+ <table class="layui-hide" id="LAY_table_storage" lay-filter="user"></table>
+ <div class="admin-table-page" style="margin-bottom: 50px;">
+		<div id="storagepaged" class="storagepaged"></div>
+</div>
+</div>
+
+
+<script type="text/html" id="Completestatus">
+	{{#
+		if(d.status==1){
+			return "待确认"
+		}else if(d.status==2){
+			return "入库待确认"
+		}else if(d.status==3){
+			return "已生入库完工单"
+		}
+	}}		
+</script>
+<script type="text/html" id="box_type">
+  <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="edit">手工同步</a>
+</script>
+<!-------------js-------------->
+<script src="../src/lib/js/bills/storage.js"></script>

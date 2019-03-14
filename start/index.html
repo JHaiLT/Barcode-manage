@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>永发智慧仓储</title>
+  <link rel="icon" href="layui/images/logo_top.png" type="image/x-icon">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="layui/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" href="layui/css/layui.css" media="all">
+  <style>
+  	* {
+    -webkit-box-sizing: unset;
+    -moz-box-sizing: unset;
+     box-sizing: unset;
+    }
+  </style>
+  <script>
+  /^http(s*):\/\//.test(location.href) || alert('请先部署到 localhost 下再访问');
+  </script>
+</head>
+<body>
+  <div id="LAY_app"></div>
+  <script src="layui/layui.js"></script>
+  <script src="../src/lib/echarts.js"></script>
+  <script src="../src/lib/jquery-1.9.1.js"></script>
+  <script src="../src/lib/md5.js"></script>
+  <script>
+  layui.config({
+    base: '../src/' //指定 layuiAdmin 项目路径，本地开发用 src，线上用 dist
+    ,version: '1.0.0-beta6'
+  }).use('index');
+  </script>
+</body>
+</html>

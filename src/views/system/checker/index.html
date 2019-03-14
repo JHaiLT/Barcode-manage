@@ -1,0 +1,42 @@
+<title>检验员管理</title>
+<div class="demoTable" style="margin: 5px;">
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="checker_name" id="checker_name" placeholder="请输入检验员名" autocomplete="off"> 
+        </div>
+      </div>
+    <div class="layui-col-md2">
+      <button class="layui-btn" id="checker_Serch">查找</button>
+      <button class="layui-btn"  id="add_checker">添加</button> 
+    </div>
+    <div class="layui-col-md9">
+    </div>
+  </div>
+ </div>	  
+   <div style="margin-bottom: 50px;">
+	 <div class="layui-fluid">
+    <div class="layui-row ">
+    	<div class="layui-col-md12">
+	 			<table class="layui-hide" id="LAY_table_checker" lay-filter="checker"></table> 
+	 		</div>
+	 		<div class="layui-col-md12">
+				<div class="admin-table-page">
+						<div id="checker_paged" class="checker_paged"></div>
+				</div>
+			</div>
+		</div>
+	</div>	 
+</div>
+</div>
+
+<script type="text/html" id="box_type">
+	<a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="useOrdisable">启用/停用</a>
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+<!-------------js-------------->
+<script src="../src/lib/js/system/checker.js"></script>

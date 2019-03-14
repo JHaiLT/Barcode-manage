@@ -1,0 +1,24 @@
+{
+    "list":[
+        {
+            "boardName":"产品A",
+            "id":480
+        },
+        {
+            "boardName":"产品B",
+            "id":380
+        },
+        {
+            "boardName":"产品C",
+            "id":366
+        },
+		{
+            "boardName":"产品D",
+            "id":320
+        },
+		{
+            "boardName":"产品E",
+            "id":300
+        }
+    ]
+}

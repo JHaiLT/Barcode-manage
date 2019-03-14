@@ -1,0 +1,40 @@
+ 
+ <link rel="stylesheet" href="../../../start/layui/css/layui.css" media="all">
+
+	<form class="layui-form" style="margin:30px  0 0 80px;">
+		<div class="layui-form-item">
+			<label class="layui-form-label">账号编号:</label>
+				<input type="text" name="EnCode" id="EnCode" placeholder="" autocomplete="off" lay-verify="required" class="layui-input layui-input-block">
+		</div>			
+		<div class="layui-form-item">
+			<label class="layui-form-label">名称:</label>
+				<input type="text" name="FullName" id="FullName" placeholder="" autocomplete="off" lay-verify="required" class="layui-input layui-input-block">
+		</div>
+		<div class="layui-form-item" >
+				<label class="layui-form-label">客户端类型:</label>
+				<div class="layui-inline ">
+		           <select  id='ClientType'  name="ClientType" lay-filter="userFilter" calss="departmentId">
+		                <option value="0"></option> 
+		                <option value="1">WEB端</option>
+		                <option value="2">Ipad端</option>
+		                <option value="3">PC端</option>
+		           </select> 
+		        </div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">备注:</label>
+				<input type="text" name="Description" id="Description" placeholder="" autocomplete="off"  class="layui-input layui-input-block">
+		</div>
+		<div class="layui-form-item" style="margin-left: 112px;" >
+		   <input type="radio" name="EnabledMark" lay-verify="required" value="1" title="启用">
+		   <input type="radio" name="EnabledMark" lay-verify="required" value="0" title="禁用">
+		</div>		
+		<div class="layui-form-item" style="margin:25px 0 0 80px;">
+				<button id="submited" class="layui-btn" lay-submit lay-filter="form_role" style="display: none" ></button>
+		</div>
+	</form>
+
+
+    <script src="../../../start/layui/layui.js"></script>
+	<script src="../../lib/jquery-1.9.1.js"></script>
+	<script src="../../lib/js/system/add_role.js"></script>

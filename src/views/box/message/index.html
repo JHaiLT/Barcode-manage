@@ -1,0 +1,50 @@
+<title>箱子信息</title>
+<div class="demoTable"style="margin: 5px;">
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="Barcode" id="Barcode" placeholder="请输入箱号" autocomplete="off"> 
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="layui-inline">
+          <input class="layui-input" name="ID_URP" id="ID_URP" placeholder="请输入生产单号" autocomplete="off"> 
+        </div>
+      </div>      
+      <div class="layui-col-md2">
+        <div class="layui-inline layui-form">
+            <select class="layui-input-block" name="Box_query" lay-search="" id="Box_query" lay-filter="aihao">
+              <option value="">请选择产品</option>
+            </select>
+        </div>
+      </div>
+ 	      <div class="layui-col-md2">
+	        <div class="layui-inline">
+	          <div class="layui-input-inline">
+	            <input type="text" name="BoxM_date" id="BoxM_date" placeholder="开始时间" autocomplete="off" class="layui-input">
+	          </div>
+	        </div>
+	      </div>
+	     <div class="layui-col-md2">
+	      <div class="layui-inline">
+	        <div class="layui-input-inline">
+	          <input type="text" name="BoxM_date1" id="BoxM_date1" placeholder="结束时间" autocomplete="off" class="layui-input">
+	        </div>
+	      </div>
+	    </div>      
+    <div class="layui-col-md1">
+      <button class="layui-btn" id="Box_serch">查找</button>
+    </div>
+    <div class="layui-col-md3">
+    </div>
+  </div>
+ </div>
+  	<table class="layui-hide" id="LAY_table_MangeBox" lay-filter="user"></table> 
+  					<div class="admin-table-page" style="margin-bottom: 50px;">
+						<div id="Box_manage_paged" class="Box_manage_paged"></div>
+				</div>
+</div>
+
+<!-------------js-------------->
+<script src="../src/lib/js/box/bo_message.js"></script>
